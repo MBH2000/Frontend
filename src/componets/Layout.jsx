@@ -12,7 +12,7 @@ const Layout = () => {
   })); 
   async function handleLogout(){
     try {
-      const response = await fetch('http://localhost:3005/user/logout', {
+      const response = await fetch('https://backend-zchf.onrender.com/user/logout', {
         method: "POST",
         mode:'cors',
         headers:{
