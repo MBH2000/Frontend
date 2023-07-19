@@ -10,13 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "agora-react-uikit": "^1.2.0",
+    "agora-rtc-react": "github:AgoraIO-Community/agora-rtc-react#v1.0.1",
     "axios": "^1.4.0",
     "axois": "^0.0.1-security",
     "mdb-react-ui-kit": "^6.1.0",
     "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
+    "simple-peer": "^9.11.1",
+    "socket.io-client": "^4.7.1",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
