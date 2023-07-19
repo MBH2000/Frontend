@@ -56,7 +56,7 @@ const Profile = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('avatar', file);
-    fetch('http://localhost:3005/user/avatar', {
+    fetch('https://backend-zchf.onrender.com/user/avatar', {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + user.token,
@@ -75,7 +75,7 @@ const Profile = () => {
 
   async function getuser() {
     try {
-      const response = await fetch('http://localhost:3005/user/me', {
+      const response = await fetch('https://backend-zchf.onrender.com/user/me', {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -93,7 +93,7 @@ const Profile = () => {
   }
   async function deleteUsr() {
     try {
-      const response = await fetch('http://localhost:3005/user/delete', {
+      const response = await fetch('https://backend-zchf.onrender.com/user/delete', {
         method: "DELETE",
         mode: 'cors',
         headers: {
@@ -113,7 +113,7 @@ const Profile = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3005/user/update', {
+      const response = await fetch('https://backend-zchf.onrender.com/user/update', {
         method: 'PATCH',
         mode: 'cors',
         headers: {
