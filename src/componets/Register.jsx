@@ -24,7 +24,7 @@ const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/register', {
+      const response = await fetch('http://localhost:3005/user/register', {
         method: 'POST',
         mode: 'cors',
         headers: {

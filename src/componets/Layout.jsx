@@ -12,7 +12,7 @@ const Layout = () => {
   })); 
   async function handleLogout(){
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/logout', {
+      const response = await fetch('http://localhost:3005/user/logout', {
         method: "POST",
         mode:'cors',
         headers:{
@@ -60,7 +60,7 @@ const Layout = () => {
           </button>
           <ul className="dropdown-menu dropdown-menu-light">
             <li><Link className="dropdown-item" to='/profile'>Profile</Link></li>
-            <li> {(nav === false) && <Navigate to="/" replace={true} />}
+            <li> {(nav === false) && <Navigate to="/" replace={true}/>}
               <button className="btn btn-outline-primary"  onClick={handleLogout} > Log Out </button>
               </li>
           </ul>
@@ -72,7 +72,7 @@ const Layout = () => {
                 style={{ width: '50px',position:'static' }}
                 fluid />
                 :
-                <>/</>}
+                <> </>}
         </li>
       </ul>
     </div>:<Link className="btn btn-outline-primary"  to='/register'>Register/Login</Link>}
