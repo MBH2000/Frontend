@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import useUserStore  from '../store/store';
 import {
   MDBCol,
