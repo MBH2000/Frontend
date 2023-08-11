@@ -21,7 +21,7 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/login', {
+      const response = await fetch('http://localhost:3005/user/login', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -30,7 +30,7 @@ const Login = () => {
         body: JSON.stringify(user),
       });
       const data = await response.json();
-      setUserstate(data.user.name, data.token,data.user.avatar);
+      setUserstate(data.user.name, data.token,data.user.id,data.user.avatar);
 
       if (response.status === 200) {
         setNav(true);

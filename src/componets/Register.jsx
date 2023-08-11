@@ -24,7 +24,7 @@ const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/register', {
+      const response = await fetch('http://localhost:3005/user/register', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -34,7 +34,8 @@ const Register = () => {
       });
       const data = await response.json();
       setRespone((oldVal)=> response.status)
-      setUserstate(data.user.name, data.token);
+      console.log(data.id)
+      setUserstate(data.user.name, data.token,data.user.id);
       if (response.status === 201) {
         setNav(true);
       }

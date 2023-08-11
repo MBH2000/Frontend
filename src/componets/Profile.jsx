@@ -8,11 +8,7 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
   MDBBreadcrumb,
-  MDBBreadcrumbItem,
-  MDBProgress,
-  MDBProgressBar,
   MDBIcon,
   MDBListGroup,
   MDBListGroupItem
@@ -55,7 +51,7 @@ const Profile = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('avatar', file);
-    fetch('https://backend-zchf.onrender.com/user/avatar', {
+    fetch('http://localhost:3005/user/avatar', {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + user.token,
@@ -74,7 +70,7 @@ const Profile = () => {
 
   async function getuser() {
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/me', {
+      const response = await fetch('http://localhost:3005/user/me', {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -92,7 +88,7 @@ const Profile = () => {
   }
   async function deleteUsr() {
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/delete', {
+      const response = await fetch('http://localhost:3005/user/delete', {
         method: "DELETE",
         mode: 'cors',
         headers: {
@@ -112,7 +108,7 @@ const Profile = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch('https://backend-zchf.onrender.com/user/update', {
+      const response = await fetch('http://localhost:3005/user/update', {
         method: 'PATCH',
         mode: 'cors',
         headers: {
@@ -123,7 +119,7 @@ const Profile = () => {
         body: JSON.stringify(editin),
       });
       const data = await response.json();
-      setUserstate(data.name,user.token , data.avatar);
+      setUserstate(data.name, user.token ,user.uid,data.avatar);
       if(response.status === 200){
         handleEditChange()
         getuser()
@@ -247,7 +243,12 @@ const Profile = () => {
           </MDBCard>
         </MDBCol>
       </MDBRow>
-    </MDBContainer> : <>Loading</>}
+    </MDBContainer> : 
+        <div class="three-body">
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+        </div>}
   </section>
   </>
   );
