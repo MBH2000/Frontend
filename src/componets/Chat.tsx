@@ -246,7 +246,7 @@ const ChannelForm = (props: {
   async function handleSubmit(e) {
   e.preventDefault();
   try {
-    const response = await fetch(`http://localhost:3005/rtc/${channelName}/publisher/uid/${user.uid}`, {
+    const response = await fetch(`https://backend-zchf.onrender.com/rtc/${channelName}/publisher/uid/${user.uid}`, {
       method: 'GET',
       mode: 'cors',
       headers: {

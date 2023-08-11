@@ -31,7 +31,7 @@ const CoursesCard = () => {
     setCourse();
     try {
       const response = await fetch(
-        `http://localhost:3005/course?page=${pageNumber}&limit=6`,
+        `https://backend-zchf.onrender.com/course?page=${pageNumber}&limit=6`,
         {
           method: 'GET',
           mode: 'cors',

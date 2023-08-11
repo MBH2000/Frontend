@@ -23,7 +23,7 @@ const HAbout = () => {
   async function getCourses(e) {
     setCourse()
     try {
-      const response = await fetch(`http://localhost:3005/course?page=0&limit=3`, {
+      const response = await fetch(`https://backend-zchf.onrender.com/course?page=0&limit=3`, {
         method: 'GET',
         mode: 'cors',
         headers: {

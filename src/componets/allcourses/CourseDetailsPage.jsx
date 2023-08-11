@@ -22,7 +22,7 @@ const CourseDetails = () => {
   const [coursedetails, setCourseDetails] = useState(null);
   async function getCourseDetails(e) {
     try {
-      const response = await fetch(`http://localhost:3005/course/${id}`, {
+      const response = await fetch(`https://backend-zchf.onrender.com/course/${id}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
